@@ -39,12 +39,11 @@ h1{font-size:clamp(34px,6vw,52px);line-height:1.08;letter-spacing:-.03em;font-we
 .mark{width:72px;height:72px;display:grid;gap:4px;padding:10px;background:var(--surface);border-radius:16px}
 .mark i{background:var(--tile);border-radius:3px;display:block}
 .mark i.o{background:transparent}
-.m3{grid-template-columns:repeat(3,1fr)}
+.mark i.b{background:transparent;border:1.5px solid var(--tile)}
+.m3,.m9{grid-template-columns:repeat(3,1fr)}
+.m3 i,.m9 i{border-radius:4px}
 .m2{grid-template-columns:repeat(2,1fr);gap:5px}
-.m2 i{border-radius:5px;display:grid;place-items:center;color:var(--tile-fg);font:700 9px/1 var(--sans)}
-.m9{grid-template-columns:repeat(3,1fr);gap:2px}
-.m9 i{background:transparent;border:1.5px solid var(--tile);border-radius:2px}
-.m9 i.f{background:var(--tile)}
+.m2 i{border-radius:6px}
 .about{margin-top:80px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:32px}
 .about p{margin:8px 0 0;color:var(--muted);font-size:15px}
 footer{margin-top:96px;padding-top:24px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--muted)}
@@ -78,7 +77,7 @@ th{font:500 12px var(--mono);letter-spacing:.06em;text-transform:uppercase;color
 <main>
   <p class="label">Independent game studio</p>
   <h1>Quiet puzzle games for small moments.</h1>
-  <p class="lede">artisandhq makes calm, uncluttered puzzle games for iPhone and Android. No accounts, no feeds, no noise. Just the puzzle.</p>
+  <p class="lede">artisandhq makes calm, uncluttered puzzle games for iPhone. No accounts, no feeds, no noise. Just the puzzle.</p>
 
   <div class="apps" id="apps">
     <article class="app">
@@ -86,11 +85,11 @@ th{font:500 12px var(--mono);letter-spacing:.06em;text-transform:uppercase;color
       <div><h2>slide.</h2><p>The sliding number puzzle, stripped back. Make your own puzzle from a photo.</p><p class="label meta">iOS · Android · Coming soon</p></div>
     </article>
     <article class="app">
-      <div class="mark m9" aria-hidden="true"><i class="f"></i><i></i><i></i><i></i><i class="f"></i><i></i><i></i><i></i><i class="f"></i></div>
+      <div class="mark m9" aria-hidden="true"><i></i><i></i><i></i><i></i><i class="b"></i><i></i><i></i><i></i><i></i></div>
       <div><h2>sudoku.</h2><p>A quiet sudoku. No hand-holding, no mistake counter, a fresh daily puzzle.</p><p class="label meta">iOS · Android · Coming soon</p></div>
     </article>
     <article class="app">
-      <div class="mark m2" aria-hidden="true"><i>2</i><i>0</i><i>4</i><i>8</i></div>
+      <div class="mark m2" aria-hidden="true"><i></i><i></i><i></i><i class="b"></i></div>
       <div><h2>2048.</h2><p>A calm 2048, from a roomy 5 × 5 board to Expert with one immovable stone.</p><p class="label meta">iOS · Android · Coming soon</p></div>
     </article>
   </div>
