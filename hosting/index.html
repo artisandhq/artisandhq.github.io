@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>artisandhq</title>
+<meta name="description" content="artisandhq makes quiet puzzle games: slide., sudoku. and 2048.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one quiet column, the three app marks as the only ornament. */
+:root{
+  --bg:#efebe4; --surface:#e6e1d8; --fg:#24221f; --muted:#6e6a62; --line:#d4cec3; --tile:#2c2a27; --tile-fg:#efebe4;
+  --sans:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,"SF Mono",Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#1b1a18; --surface:#24221f; --fg:#ebe6dd; --muted:#9a948a; --line:#36332e; --tile:#e3ddd2; --tile-fg:#1b1a18; color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#1b1a18; --surface:#24221f; --fg:#ebe6dd; --muted:#9a948a; --line:#36332e; --tile:#e3ddd2; --tile-fg:#1b1a18; color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.65 var(--sans);-webkit-font-smoothing:antialiased}
+.wrap{max-width:720px;margin:0 auto;padding-block:56px 72px;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+a{color:inherit;text-decoration-color:var(--muted);text-underline-offset:3px}
+a:hover{text-decoration-color:var(--fg)}
+a:focus-visible{outline:2px solid var(--fg);outline-offset:3px;border-radius:2px}
+header.top{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:96px}
+.brand{font-weight:700;font-size:18px;letter-spacing:-.01em;text-decoration:none}
+.brand span{color:var(--muted);font-weight:500}
+nav{display:flex;gap:20px;font-size:14px;color:var(--muted)}
+nav a{text-decoration:none}
+nav a:hover{color:var(--fg)}
+.label{font:500 12px/1.4 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+h1{font-size:clamp(34px,6vw,52px);line-height:1.08;letter-spacing:-.03em;font-weight:600;margin:14px 0 20px;text-wrap:balance}
+.lede{font-size:18px;color:var(--muted);max-width:34em;margin:0}
+.apps{display:grid;gap:0;margin-top:80px;border-top:1px solid var(--line)}
+.app{display:grid;grid-template-columns:72px 1fr;gap:24px;align-items:center;padding-block:28px;border-bottom:1px solid var(--line)}
+.app h2{margin:0;font-size:22px;font-weight:600;letter-spacing:-.02em}
+.app p{margin:4px 0 0;color:var(--muted);font-size:15px}
+.app .meta{margin-top:10px}
+.mark{width:72px;height:72px;display:grid;gap:4px;padding:10px;background:var(--surface);border-radius:16px}
+.mark i{background:var(--tile);border-radius:3px;display:block}
+.mark i.o{background:transparent}
+.m3{grid-template-columns:repeat(3,1fr)}
+.m2{grid-template-columns:repeat(2,1fr);gap:5px}
+.m2 i{border-radius:5px;display:grid;place-items:center;color:var(--tile-fg);font:700 9px/1 var(--sans)}
+.m9{grid-template-columns:repeat(3,1fr);gap:2px}
+.m9 i{background:transparent;border:1.5px solid var(--tile);border-radius:2px}
+.m9 i.f{background:var(--tile)}
+.about{margin-top:80px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:32px}
+.about p{margin:8px 0 0;color:var(--muted);font-size:15px}
+footer{margin-top:96px;padding-top:24px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--muted)}
+/* policy */
+.doc h1{font-size:clamp(30px,5vw,42px)}
+.doc .lede{font-size:16px}
+.toc{margin:40px 0 0;padding:20px 24px;background:var(--surface);border-radius:12px;columns:2 220px;column-gap:32px;font-size:14px}
+.toc a{display:block;padding-block:3px;text-decoration:none;color:var(--muted)}
+.toc a:hover{color:var(--fg)}
+.doc section{margin-top:56px;max-width:65ch}
+.doc h2{font-size:20px;font-weight:600;letter-spacing:-.015em;margin:0 0 12px;display:flex;gap:12px;align-items:baseline}
+.doc h2 .n{font:500 13px var(--mono);color:var(--muted)}
+.doc h3{font-size:16px;font-weight:600;margin:24px 0 6px}
+.doc p,.doc li{color:var(--fg)}
+.doc ul{padding-left:20px;margin:8px 0}
+.doc li{margin-block:6px}
+.note{color:var(--muted);font-size:14px}
+.tablewrap{overflow-x:auto;margin-top:12px}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:520px}
+th,td{text-align:left;padding:10px 12px 10px 0;border-bottom:1px solid var(--line);vertical-align:top}
+th{font:500 12px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+@media (max-width:480px){.app{grid-template-columns:56px 1fr;gap:16px}.mark{width:56px;height:56px;padding:8px}header.top{margin-bottom:64px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <a class="brand" href="index.html">artisandhq<span>.</span></a>
+  <nav><a href="index.html#apps">Apps</a><a href="privacy.html">Privacy</a><a href="index.html#contact">Contact</a></nav>
+</header>
+<main>
+  <p class="label">Independent game studio</p>
+  <h1>Quiet puzzle games for small moments.</h1>
+  <p class="lede">artisandhq makes calm, uncluttered puzzle games for iPhone and Android. No accounts, no feeds, no noise. Just the puzzle.</p>
+
+  <div class="apps" id="apps">
+    <article class="app">
+      <div class="mark m3" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="o"></i></div>
+      <div><h2>slide.</h2><p>The sliding number puzzle, stripped back. Make your own puzzle from a photo.</p><p class="label meta">iOS · Android · Coming soon</p></div>
+    </article>
+    <article class="app">
+      <div class="mark m9" aria-hidden="true"><i class="f"></i><i></i><i></i><i></i><i class="f"></i><i></i><i></i><i></i><i class="f"></i></div>
+      <div><h2>sudoku.</h2><p>A quiet sudoku. No hand-holding, no mistake counter, a fresh daily puzzle.</p><p class="label meta">iOS · Android · Coming soon</p></div>
+    </article>
+    <article class="app">
+      <div class="mark m2" aria-hidden="true"><i>2</i><i>0</i><i>4</i><i>8</i></div>
+      <div><h2>2048.</h2><p>A calm 2048, from a roomy 5 × 5 board to Expert with one immovable stone.</p><p class="label meta">iOS · Android · Coming soon</p></div>
+    </article>
+  </div>
+
+  <div class="about" id="contact">
+    <div><p class="label">Privacy</p><p>Your progress stays on your device. We run no servers and keep no accounts. <a href="privacy.html">Read the privacy policy</a>.</p></div>
+    <div><p class="label">Contact</p><p>Questions, bugs or ideas:<br><span style="color:var(--fg)">[your-contact@email.com]</span></p></div>
+  </div>
+</main>
+<footer>
+  <span>© 2026 artisandhq. Made in New Taipei City, Taiwan.</span>
+  <span><a href="privacy.html">Privacy policy</a></span>
+</footer>
+</div>
+</body>
+</html>

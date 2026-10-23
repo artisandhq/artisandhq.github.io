@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Privacy policy · artisandhq</title>
+<meta name="description" content="Privacy policy for slide., sudoku. and 2048. by artisandhq.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one quiet column, the three app marks as the only ornament. */
+:root{
+  --bg:#efebe4; --surface:#e6e1d8; --fg:#24221f; --muted:#6e6a62; --line:#d4cec3; --tile:#2c2a27; --tile-fg:#efebe4;
+  --sans:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,"SF Mono",Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#1b1a18; --surface:#24221f; --fg:#ebe6dd; --muted:#9a948a; --line:#36332e; --tile:#e3ddd2; --tile-fg:#1b1a18; color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#1b1a18; --surface:#24221f; --fg:#ebe6dd; --muted:#9a948a; --line:#36332e; --tile:#e3ddd2; --tile-fg:#1b1a18; color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.65 var(--sans);-webkit-font-smoothing:antialiased}
+.wrap{max-width:720px;margin:0 auto;padding-block:56px 72px;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+a{color:inherit;text-decoration-color:var(--muted);text-underline-offset:3px}
+a:hover{text-decoration-color:var(--fg)}
+a:focus-visible{outline:2px solid var(--fg);outline-offset:3px;border-radius:2px}
+header.top{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:96px}
+.brand{font-weight:700;font-size:18px;letter-spacing:-.01em;text-decoration:none}
+.brand span{color:var(--muted);font-weight:500}
+nav{display:flex;gap:20px;font-size:14px;color:var(--muted)}
+nav a{text-decoration:none}
+nav a:hover{color:var(--fg)}
+.label{font:500 12px/1.4 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+h1{font-size:clamp(34px,6vw,52px);line-height:1.08;letter-spacing:-.03em;font-weight:600;margin:14px 0 20px;text-wrap:balance}
+.lede{font-size:18px;color:var(--muted);max-width:34em;margin:0}
+.apps{display:grid;gap:0;margin-top:80px;border-top:1px solid var(--line)}
+.app{display:grid;grid-template-columns:72px 1fr;gap:24px;align-items:center;padding-block:28px;border-bottom:1px solid var(--line)}
+.app h2{margin:0;font-size:22px;font-weight:600;letter-spacing:-.02em}
+.app p{margin:4px 0 0;color:var(--muted);font-size:15px}
+.app .meta{margin-top:10px}
+.mark{width:72px;height:72px;display:grid;gap:4px;padding:10px;background:var(--surface);border-radius:16px}
+.mark i{background:var(--tile);border-radius:3px;display:block}
+.mark i.o{background:transparent}
+.m3{grid-template-columns:repeat(3,1fr)}
+.m2{grid-template-columns:repeat(2,1fr);gap:5px}
+.m2 i{border-radius:5px;display:grid;place-items:center;color:var(--tile-fg);font:700 9px/1 var(--sans)}
+.m9{grid-template-columns:repeat(3,1fr);gap:2px}
+.m9 i{background:transparent;border:1.5px solid var(--tile);border-radius:2px}
+.m9 i.f{background:var(--tile)}
+.about{margin-top:80px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:32px}
+.about p{margin:8px 0 0;color:var(--muted);font-size:15px}
+footer{margin-top:96px;padding-top:24px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--muted)}
+/* policy */
+.doc h1{font-size:clamp(30px,5vw,42px)}
+.doc .lede{font-size:16px}
+.toc{margin:40px 0 0;padding:20px 24px;background:var(--surface);border-radius:12px;columns:2 220px;column-gap:32px;font-size:14px}
+.toc a{display:block;padding-block:3px;text-decoration:none;color:var(--muted)}
+.toc a:hover{color:var(--fg)}
+.doc section{margin-top:56px;max-width:65ch}
+.doc h2{font-size:20px;font-weight:600;letter-spacing:-.015em;margin:0 0 12px;display:flex;gap:12px;align-items:baseline}
+.doc h2 .n{font:500 13px var(--mono);color:var(--muted)}
+.doc h3{font-size:16px;font-weight:600;margin:24px 0 6px}
+.doc p,.doc li{color:var(--fg)}
+.doc ul{padding-left:20px;margin:8px 0}
+.doc li{margin-block:6px}
+.note{color:var(--muted);font-size:14px}
+.tablewrap{overflow-x:auto;margin-top:12px}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:520px}
+th,td{text-align:left;padding:10px 12px 10px 0;border-bottom:1px solid var(--line);vertical-align:top}
+th{font:500 12px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+@media (max-width:480px){.app{grid-template-columns:56px 1fr;gap:16px}.mark{width:56px;height:56px;padding:8px}header.top{margin-bottom:64px}}
+</style>
+</head>
+<body>
+<div class="wrap doc">
+<header class="top">
+  <a class="brand" href="index.html">artisandhq<span>.</span></a>
+  <nav><a href="index.html#apps">Apps</a><a href="privacy.html">Privacy</a><a href="index.html#contact">Contact</a></nav>
+</header>
+<main>
+  <p class="label">Effective October 23, 2026</p>
+  <h1>Privacy policy</h1>
+  <p class="lede">This policy covers the mobile apps <strong>slide.</strong>, <strong>sudoku.</strong> and <strong>2048.</strong> (the "Apps") published by artisandhq. The short version: we don't run servers, we don't ask you to make an account, and your game data stays on your device. The Apps show ads from Google AdMob, and Google collects some device data to do that. The details are below.</p>
+
+  <nav class="toc" aria-label="Contents">
+    <a href="#who">1. Who we are</a><a href="#device">2. Data kept on your device</a><a href="#ads">3. Advertising (Google AdMob)</a>
+    <a href="#purchases">4. In-app purchases</a><a href="#fonts">5. Fonts</a><a href="#choices">6. Your choices</a>
+    <a href="#children">7. Children</a><a href="#rights">8. Your rights</a><a href="#changes">9. Changes</a><a href="#contact">10. Contact</a>
+  </nav>
+
+  <section id="who"><h2><span class="n">01</span>Who we are</h2>
+    <p>artisandhq is the name under which [Your full legal name], an individual developer based in New Taipei City, Taiwan, publishes apps. In this policy "we" and "us" mean artisandhq. For data handled inside the Apps by Google AdMob, Google is an independent controller of that data.</p>
+  </section>
+
+  <section id="device"><h2><span class="n">02</span>Data kept on your device</h2>
+    <p>The Apps save the following only in local storage on your phone. We never receive it, and it is not backed up to any server of ours:</p>
+    <ul>
+      <li>Game progress and saved games, scores, best times, statistics and daily streaks</li>
+      <li>Settings such as theme, sound and difficulty</li>
+      <li>Which themes you have unlocked and whether you bought "Remove ads"</li>
+    </ul>
+    <h3>Photos (slide. only)</h3>
+    <p>slide. lets you turn a photo into a puzzle. If you use this, the app asks for permission to pick a photo from your library. The photo is cut into tiles on your device and is not uploaded, shared or sent to us or anyone else. You can refuse or withdraw photo access at any time in your phone's settings; the rest of the app keeps working.</p>
+    <p>Deleting an App removes all of this data from your device.</p>
+  </section>
+
+  <section id="ads"><h2><span class="n">03</span>Advertising (Google AdMob)</h2>
+    <p>The Apps are free and show ads served by Google AdMob: full-screen ads between games and optional rewarded ads you choose to watch (for example for an undo or a hint). To deliver, measure and limit ads and to prevent fraud, the Google Mobile Ads SDK may collect:</p>
+    <div class="tablewrap"><table>
+      <thead><tr><th>Data</th><th>Purpose</th></tr></thead>
+      <tbody>
+        <tr><td>Advertising ID (Android) or IDFA (iOS, only if you allow tracking)</td><td>Ad delivery, frequency capping, personalised ads</td></tr>
+        <tr><td>IP address and approximate location derived from it</td><td>Choosing ads for your region, fraud prevention</td></tr>
+        <tr><td>Device and app information (model, OS version, language, app version)</td><td>Showing ads that work on your device</td></tr>
+        <tr><td>Ad interactions (impressions, taps) and diagnostics</td><td>Measurement, analytics, fraud prevention</td></tr>
+      </tbody>
+    </table></div>
+    <p>This data goes directly from your device to Google. We only see aggregated reports. Google's use of it is governed by the <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>; see also <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">How Google uses information from sites or apps that use its services</a>.</p>
+    <p>If you are in the European Economic Area, the United Kingdom or Switzerland, the Apps ask for your consent through Google's consent message before personalised ads are shown. On iPhone, the Apps ask for permission to track through Apple's App Tracking Transparency prompt; if you decline, you still see ads, but they are not personalised using the IDFA.</p>
+    <p>If you buy "Remove ads", full-screen ads stop. Rewarded ads remain available only when you choose to watch one.</p>
+  </section>
+
+  <section id="purchases"><h2><span class="n">04</span>In-app purchases</h2>
+    <p>Premium themes and "Remove ads" are sold through the Apple App Store and Google Play. Payment is handled entirely by Apple or Google under their own privacy policies. We never see your name, payment card or billing details. The App only receives a confirmation that a purchase was made, which it stores on your device so the item stays unlocked.</p>
+  </section>
+
+  <section id="fonts"><h2><span class="n">05</span>Fonts</h2>
+    <p>Some versions of the Apps download their typeface from Google Fonts the first time they open. This request sends your IP address to Google, as any web request does. No other data is sent, and the font is then stored on your device.</p>
+  </section>
+
+  <section id="choices"><h2><span class="n">06</span>Your choices</h2>
+    <ul>
+      <li><strong>Consent (EEA/UK/CH):</strong> change your choice at any time from <em>Settings → Privacy options</em> inside each App.</li>
+      <li><strong>iPhone:</strong> Settings → Privacy &amp; Security → Tracking, and switch the App off.</li>
+      <li><strong>Android:</strong> Settings → Google → Ads (or Settings → Privacy → Ads) to delete or reset your advertising ID.</li>
+      <li><strong>All ads:</strong> buy "Remove ads" in the App to stop full-screen ads.</li>
+      <li><strong>All data:</strong> delete the App.</li>
+    </ul>
+  </section>
+
+  <section id="children"><h2><span class="n">07</span>Children</h2>
+    <p>The Apps are general-audience games and are not directed at children under 13. We do not knowingly collect personal information from children. If you believe a child has provided personal information through an App, contact us and we will help remove it.</p>
+  </section>
+
+  <section id="rights"><h2><span class="n">08</span>Your rights</h2>
+    <p>Depending on where you live (for example under the EU/UK GDPR, the California Consumer Privacy Act, or Taiwan's Personal Data Protection Act), you may have rights to access, correct, delete or object to the processing of your personal data. Because we hold no personal data about you on our side, most requests are best handled through the controls in section 6 or directly with Google at <a href="https://myadcenter.google.com" target="_blank" rel="noopener">My Ad Center</a>. We will gladly help with any request; write to us at the address below.</p>
+    <p>We do not sell your personal information. Advertising data shared with Google as described in section 3 may count as "sharing" for cross-context behavioural advertising under some US state laws; you can opt out using the controls in section 6.</p>
+  </section>
+
+  <section id="changes"><h2><span class="n">09</span>Changes</h2>
+    <p>If we change how the Apps handle data, we will update this page and the effective date at the top. Significant changes will also be noted in the App's release notes.</p>
+  </section>
+
+  <section id="contact"><h2><span class="n">10</span>Contact</h2>
+    <p>[Your full legal name] (artisandhq)<br>New Taipei City, Taiwan<br>[your-contact@email.com]</p>
+  </section>
+</main>
+<footer>
+  <span>© 2026 artisandhq. Made in New Taipei City, Taiwan.</span>
+  <span><a href="privacy.html">Privacy policy</a></span>
+</footer>
+</div>
+</body>
+</html>
